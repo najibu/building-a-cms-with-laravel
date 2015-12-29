@@ -2,6 +2,7 @@
 
 namespace SundaySim\Providers;
 
+use SundaySim\View\Composers;
 use SundaySim\View\ThemeViewFinder;
 use Illuminate\Support\ServiceProvider;
 
@@ -14,6 +15,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->app['view']->composer('layouts.auth', Composers\AddStatusMessage::class);
+        $this->app['view']->composer('layouts.backend', Composers\AddAdminUser::class);
         $this->app['view']->setFinder($this->app['theme.finder']);
     }
 
