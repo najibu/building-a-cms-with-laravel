@@ -10,9 +10,7 @@
 		<div class="container">
 			<div class="navbar-header"><a href="/" class="navbar-brand">The Sunday Sim</a></div>
 			<ul class="nav navbar-nav">
-				<li><a href="#">item 1</a></li>
-				<li><a href="#">item 2</a></li>
-				<li><a href="#">item 3</a></li>
+				<li><a href="{{ route('backend.users.index') }}">Users</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><span class="navbar-text">Hello, {{ $admin->name }}</span></li>
